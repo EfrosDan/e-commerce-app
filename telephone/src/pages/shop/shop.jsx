@@ -13,20 +13,13 @@ const Shop = (props) => {
 
   //----------------Sort Option-----------------
 
-  // const [sortedData, setSortedData] = useState(PRODUCTS);
   const [sortedType, setSortedType] = useState('ascending')
   
   const handleSortChange = event => {
     (setSortedType(event.target.value));
   };
 
-  const sortedArray = 
-    sortedType === 'price-ascending'
-    ? [...PRODUCTS].sort((a, b) => a.price - b.price)
-    : sortedType === 'price-descending'
-    ? [...PRODUCTS].sort((a, b) => b.price - a.price)
-    : [...PRODUCTS].sort((a, b) => (a.brand - b.brand ? 1 : -1))
-
+  
   // useEffect(()=>{
   //   const sortedArray = [...sortedData].sort((a, b) => {
   //     return sortedType === 'ascending' ? (a.brand - b.id) : (b.id - a.id);
@@ -67,18 +60,16 @@ const Shop = (props) => {
         setSelectedCategory(event.target.value)
     };
 
-    function filteredData(products, selected, query, sortedType) {
-        let filteredProducts = products;
-       
-        let sortedProducts = products;
+    function filteredSortedData(products, selected, query, sorted) {
+        let filteredSortedProducts = products;
 
         //Filtering Input Items
         if (query) {
-            filteredProducts = filteredItems;
+          filteredSortedProducts = filteredItems;
         }
 
         if (selected) {
-            filteredProducts = filteredProducts.filter(
+          filteredSortedProducts = filteredSortedProducts.filter(
                 ({type, brand, price}) =>
                 type === selected ||
                 brand === selected ||
@@ -86,11 +77,17 @@ const Shop = (props) => {
             );
         }
 
-        if(sortedType) {
-          sortedProducts = sortedArray;
+        if (sorted) {
+          filteredSortedProducts = sortedType === 'price-ascending'
+          ? [...filteredSortedProducts].sort((a, b) => a.price - b.price)
+          : sortedType === 'price-descending'
+          ? [...filteredSortedProducts].sort((a, b) => b.price - a.price)
+          : sortedType === 'ascending'
+          ? [...filteredSortedProducts].sort((a, b) => (a.brand - b.brand ? -1 : 1))
+          : [...filteredSortedProducts].sort((a, b) => (a.brand - b.brand ? 1 : -1))
         }
 
-        return filteredProducts.map(
+        return filteredSortedProducts.map(
             ({type,brand,model,price,productImg,color}) => (
                 <Product
                 key={Math.random()}
@@ -104,9 +101,8 @@ const Shop = (props) => {
             )
         );
     }
-    const result = filteredData(PRODUCTS, selectedCategory, query, sortedType);
-
-    console.log(sortedArray)
+    const result = filteredSortedData(PRODUCTS, selectedCategory, query, sortedType);
+    
   const {title} = props;
   
   return (
