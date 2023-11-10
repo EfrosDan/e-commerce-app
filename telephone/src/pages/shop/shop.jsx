@@ -55,6 +55,11 @@ const Shop = (props) => {
         setSelectedCategory(event.target.value)
     }
 
+    //----------Checkbox Filter--------------
+    const handleClickBox = event => {
+      setSelectedCategory(event.target.value)
+    }
+
     //------------Button Filtering---------
     const handleClick = (event) =>{
         setSelectedCategory(event.target.value)
@@ -70,10 +75,11 @@ const Shop = (props) => {
 
         if (selected) {
           filteredSortedProducts = filteredSortedProducts.filter(
-                ({type, brand, price}) =>
+                ({type, brand, price, availablity}) =>
                 type === selected ||
                 brand === selected ||
-                price === selected
+                price === selected ||
+                availablity === selected
             );
         }
 
@@ -88,9 +94,10 @@ const Shop = (props) => {
         }
 
         return filteredSortedProducts.map(
-            ({type,brand,model,price,productImg,color}) => (
+            ({id,type,brand,model,price,productImg,color}) => (
                 <Product
                 key={Math.random()}
+                id = {id}
                 type={type}
                 brand={brand}
                 model={model}
@@ -102,7 +109,7 @@ const Shop = (props) => {
         );
     }
     const result = filteredSortedData(PRODUCTS, selectedCategory, query, sortedType);
-    
+
   const {title} = props;
   
   return (
@@ -114,7 +121,7 @@ const Shop = (props) => {
         <h1>All Products </h1>
       </div>
       <div className="grid-container">
-        <Sidebar handleChange={handleChange} handleClick={handleClick}/>
+        <Sidebar handleChange={handleChange} handleClick={handleClick} handleClickBox={handleClickBox} />
         <div className="form-options">
           <Nav query={query} handleInputChange={handleInputChange} handleSortChange={handleSortChange} sortedType={sortedType}/>
           <Products result={result} />

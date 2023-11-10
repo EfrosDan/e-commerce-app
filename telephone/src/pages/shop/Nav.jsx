@@ -10,8 +10,7 @@ const Nav = ({handleInputChange, query, handleSortChange, sortedType}) => {
     <div>
         <div className="filter-sort-grid">
             <p>Sort By:</p>
-              <select defaultValue={'DEFAULT'} onChange={handleSortChange} value={sortedType} className="form-control form-select">
-                <option value="DEFAULT" disabled>None</option>
+              <select  onChange={handleSortChange} value={sortedType} className="form-control form-select">
                 <option value="ascending">Alphabetically, A-Z</option>
                 <option value="descending">Alphabetically, Z-A</option>
                 <option value="price-ascending">Price, low to high</option>

@@ -11,11 +11,9 @@ const Product = ( { id, brand, model, price, productImg, color }) => {
         <img src={productImg} alt="image of telephone" />
         <div className="description">
             <p>
-                <b>{brand}</b>
+                <b>{brand}</b> {model} {color}
             </p>
-            <p>{model}</p>
             <p>${price}</p>
-            <p>{color}</p>
         </div>
         <button className='addToCartBttn' onClick={() => addToCart(id)}> Add to Cart {carItemCount > 0 && <> ({carItemCount}) </>}</button>
     </div>

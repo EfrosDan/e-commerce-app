@@ -15,7 +15,8 @@ export const PRODUCTS = [
         model: "13",
         price: "800",
         productImg:img1,
-        color: "Blue"
+        color: "Blue",
+        availablity: "in-stock"
     },
     {
         id: 2,
@@ -24,7 +25,8 @@ export const PRODUCTS = [
         model: "13 Pro",
         price: "950",
         productImg:img2,
-        color: "Graphite"
+        color: "Graphite",
+        availablity: "out-stock"
     },
     {
         id: 3,
@@ -33,7 +35,8 @@ export const PRODUCTS = [
         model: "13 Pro Max",
         price: "1100",
         productImg:img3,
-        color: "Silver"
+        color: "Silver",
+        availablity: "in-stock"
     },
     {
         id: 4,
@@ -42,7 +45,8 @@ export const PRODUCTS = [
         model: "Pro",
         price: "900",
         productImg:img4,
-        color: "Spacegray"
+        color: "Spacegray",
+        availablity: "in-stock"
     },
     {
         id: 5,
@@ -51,7 +55,8 @@ export const PRODUCTS = [
         model: "Series 7",
         price: "300",
         productImg:img5,
-        color: "Green"
+        color: "Green",
+        availablity: "in-stock"
     },
     {
         id: 6,
@@ -60,7 +65,8 @@ export const PRODUCTS = [
         model: "13",
         price: "30",
         productImg:img6,
-        color: "Blue"
+        color: "Transparent",
+        availablity: "out-stock"
     },
     {
         id: 7,
@@ -69,7 +75,8 @@ export const PRODUCTS = [
         model: "3",
         price: "200",
         productImg:img7,
-        color: "Blue"
+        color: "White",
+        availablity: "out-stock"
     },
     {
         id: 8,
@@ -78,6 +85,7 @@ export const PRODUCTS = [
         model: "S23",
         price: "999",
         productImg:img8,
-        color: "Black"
+        color: "Black",
+        availablity: "in-stock"
     }
 ]

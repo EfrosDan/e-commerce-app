@@ -26,22 +26,26 @@ const Price = ({handleChange}) => {
               <span className="checkmark"></span>All
             </label>
             <Input
-            handleChange={handleChange} 
+            handleChange={handleChange}
+            type="radio"  
             value={30}
             name="test2"
             title="$0-$100"/>
             <Input
-            handleChange={handleChange}  
+            handleChange={handleChange}
+            type="radio"   
             value={300}
             name="test2"
             title="$100-$500"/>
             <Input
-            handleChange={handleChange}  
+            handleChange={handleChange}
+            type="radio"   
             value={2000}
             name="test2"
             title="$500-$2000"/>
             <Input
-            handleChange={handleChange}  
+            handleChange={handleChange}
+            type="radio"   
             value={2500}
             name="test2"
             title="Over $2000"/>

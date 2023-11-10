@@ -11,27 +11,32 @@ const Category = ({handleChange}) => {
               <span className="checkmark"></span>All
             </label>
             <Input
-            handleChange={handleChange} 
+            handleChange={handleChange}
+            type="radio" 
             value="Phone"
             name="test"
             title="Phone"/>
             <Input
-            handleChange={handleChange} 
+            handleChange={handleChange}
+            type="radio"  
             value="Laptop"
             name="test"
             title="Laptop"/>
             <Input
-            handleChange={handleChange}  
+            handleChange={handleChange}
+            type="radio"   
             value="Watch"
             name="test"
             title="Watch"/>
             <Input
-            handleChange={handleChange}  
+            handleChange={handleChange}
+            type="radio"   
             value="Headphone"
             name="test"
             title="Headphone"/>
             <Input
-            handleChange={handleChange}  
+            handleChange={handleChange}
+            type="radio"   
             value="Accessories"
             name="test"
             title="Accessories"/>
