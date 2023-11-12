@@ -210,8 +210,31 @@
 
 .product img {
     width: 150px;
+    transition: 1s ease;
 }
 
+.product .view {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+    background-color: rgb(5, 49, 119);
+    padding: 4px;
+}
+.product a:link {
+    text-decoration: none;
+    color: black;
+}
+
+.product a:visited,:hover  {
+    color:rgb(67, 34, 34);
+}
+.product .view:hover{
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.8, 0, 0.8, 1);
+    transition-duration: 150ms;
+}
 .product .description {
     text-align: center;
 }
@@ -220,7 +243,14 @@
     transition: 0.3s ease-in;
     cursor: pointer;
 }
-
+.category {
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: capitalize;
+    color: rgb(107 114 128);
+    margin-bottom: 4px;
+    text-align: left;
+}
 .addToCartBttn {
     background-color: transparent;
     border: 2px solid rgb(19,19,19);
